@@ -29,7 +29,7 @@
         #wrapper{
             width: 100%;
             height:6480px;
-            background: url(bg_full.jpg) no-repeat center bottom rgb(255,209,94);
+            background: url(자료/bg_full.jpg) no-repeat center bottom rgb(255,209,94);
             position: relative;
         }
         /* 메인로고 */
@@ -144,7 +144,7 @@
             width: 74px;
             height: 63px;
             background: url(img/nav_icon.png) no-repeat;
-            position: absolute;
+            position: fixed;
             top: 50px;
             right: 60px;
             z-index: 9999;
@@ -155,7 +155,7 @@
             width:105px;
             height: 94px;
             background: url(img/nav_icon_hover.png) no-repeat;
-            position: absolute;
+            position: fixed;
             top: 35px;
             right: 45px;
             z-index: 99999;
@@ -484,6 +484,7 @@
             top: 500px;
             left: 5%;
             margin-left: 35px;
+            cursor: pointer;
 
         }
         .event2{
@@ -494,6 +495,7 @@
             top: 895px;
             left: 0;
             margin-left: 159px;
+            cursor: pointer;
 
         }
         .event3{
@@ -504,6 +506,7 @@
             top:500px;
             right: 7%;
             z-index: 4;
+            cursor: pointer;
 
         }
         .event4{
@@ -514,8 +517,10 @@
             top: 880px;
             right: 6.5%;
             z-index: 3;
-
+            cursor: pointer;
+        
         }
+
         .video_btn{
             background: url(img/1x/video_btn.png);
             width: 123px;
@@ -536,67 +541,40 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: grba(0,0,0,0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: rgba(0,0,0,0.7);
         }
         .modal-content {
-            background-color: #fefefe;
-            margin: auto; /* flexbox 사용 시 중앙 정렬 */
+            position: relative;
+            /* background-color: #fefefe; */
             padding: 20px;
             border: 1px solid #888;
-            width: 800px;
-            height: 450px;
+            /* width: 800px;
+            height: 450px; */
+            width: 100%;
+            height: 100%;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
             animation-name: animatetop;
             animation-duration: 0.4s;
-            position: absolute;
-            left: 50%;
-            margin-left: -400px;
         }
          /* 모달 나타나는 애니메이션 (선택 사항) */
         @keyframes animatetop {
             from {top: -300px; opacity: 0}
             to {top: 0; opacity: 1}
         }
-        /* 닫기 버튼 */
-        .close-button {
-            color: #aaa;
-            float: right;
-            font-size: 3em;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            z-index: 999;
-            right:-40px;
-            top:-40px;
-        }
+        
 
-        .close-button:hover,
-        .close-button:focus {
-            color: black;
-            text-decoration: none;
-        }
-
-        /* 비디오 플레이어 */
-        #myVideo {
-            display: block; /* 줄바꿈 방지 */
-            margin-top: 10px;
-        }
-        #everland_video{
-            width: 800px;
-            height: 450px;
-            position: absolute;
-        }
+        
+      
         /* qna 페이지 */
         .qna_chatting{
             width: 675px;
             height: 1056px;
-            background: url(img/1x/qna_chatting.png) no-repeat;
+            background: url(img/1x/qna_chatting.png) no-repeat center;
+            background-size: 80%;
             position: absolute;
-            left: 10%;
+            left: 12%;
             margin-left: 400px;
+            position: relative;
         }
         input[type="submit"] {
             width: 50px;
@@ -609,52 +587,86 @@
             font-size: 20px; /* 글자 크기 */
             font-family: 'CookieRun-Regular';
             position: absolute;
-            bottom: 0;
-            right: 0;
+            bottom: 8%;
+            right: 8%;
             margin-right: 57px;
             margin-bottom: 70px;
             line-height: center;
             cursor: pointer;
         }
         input[type="submit"]:hover{
-            background-color: rgb(157, 227, 255);
+            background-color: rgb(30, 38, 41);
             color: rgb(50, 163, 207);
             
         }
         input[type="text"] {
-            width: 400px;
-            height: 50px;
+            width: 300px;
+            height: 40px;
             padding: 10px;
             border-radius: 20px;
             background-color: transparent;
             color: #333;
             border: none;
             position: absolute;
-            top: 0;
-            left: 10%;
+            top: 6%;
+            left: 14%;
             margin-top: 220px;
             margin-left: 140px;
-            font-size: 25px;
+            font-size: 20px;
 
         }
 
         textarea{
-            width: 400px;
-            height: 50px;
+            width: 320px;
+            height: 40px;
             padding: 10px;
             border-radius: 20px;
             background-color: transparent;
-            color: white;
             border: none;
             position: absolute;
-            bottom: 63px;
-            left: 10%;
+            bottom: 14%;
+            left: 15%;
             margin-left: 60px;
-            font-size: 30px;
+            font-size: 20px;
         }
         textarea:hover{
-            color: white;
-            border: none;
+            color: #000;
+        }
+        
+        /* 비디오 플레이어 */
+        #videoModal{
+            border:1px solid red;
+             width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: rgba(0,0,0,0.5) !important;
+        }
+        #videoModal #myVideo{
+            display: block;
+            width: 1280px;
+            height: 840px;
+            position: absolute;
+            left: 50%;
+            margin-left: -640px;
+            margin-top: 10px;
+        }
+        /* 닫기 버튼 */
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 3em;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            z-index: 999999 !important;
+            right: 305px;
+            top:0;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: bisque;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -668,6 +680,7 @@
                 </a>
                 <div class="menu_click_guide animate__animated animate__flash animate__infinite"></div>
                 <div class="nav_icon"></div>
+                
                 <nav id="gnb" class="active">
                     <div class="nav_x_button"></div>
                     <ul>
@@ -689,10 +702,10 @@
             <div class="about_btn1"></div>
             <div class="about_btn2"></div>
             <div class="ever_story"></div>
-            <div class="cha_guide1 hidden"></div>
-            <div class="cha_guide2 hidden"></div>
-            <div class="cha1 hidden"></div>
-            <div class="cha2 hidden"></div>
+            <div class="cha_guide1 "></div>
+            <div class="cha_guide2 "></div>
+            <div class="cha1 "></div>
+            <div class="cha2 "></div>
         </section>
         <section id="map">
             <div class="rollercoster"></div>
@@ -736,8 +749,8 @@
             <div class="video_btn"></div>
             <div id="videoModal" class="modal">
                 <div class="modal-content">
+                    <iframe id="myVideo" width="1280" height="840" src="https://www.youtube.com/embed/9DhG1_mMYaI?si=Z3b1gayo-3KhvnHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <span class="close-button">&times;</span>
-                    <iframe id="everland_video" width="560" height="315" src="https://www.youtube.com/embed/gPMsMnxZc8Q?si=kYRXYjD-KjfP-VYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -852,33 +865,47 @@
         })
     </script>
     <script>
-        $(function(){
-            var about_btn1 = $(".about_btn1")
-            var about_btn2 = $(".about_btn2")
-            var cha_guide1 = $(".cha_guide1")
-            var cha_guide2 = $(".cha_guide2")
-            var cha1 = $(".cha1")
-            var cha2 = $(".cha2")
-            var ever_story = $(".ever_story")
+    $(function(){
+        var about_btn1 = $(".about_btn1")
+        var about_btn2 = $(".about_btn2")
+        var cha_guide1 = $(".cha_guide1")
+        var cha_guide2 = $(".cha_guide2")
+        var cha1 = $(".cha1")
+        var cha2 = $(".cha2")
+        var ever_story = $(".ever_story")
 
-            cha_guide1.addClass("hidden")
-            cha_guide2.addClass("hidden")
-            cha1.addClass("hidden")
-            cha2.addClass("hidden")
+        
+        // cha_guide1.addClass("hidden")
+        // cha_guide2.addClass("hidden")
+        // cha1.addClass("hidden")
+        // cha2.addClass("hidden")
+        // 처음엔 숨기기
+        ever_story.addClass("hidden")
+        
+        about_btn1.click(function(){
+            // 다른 내용 다 숨기기
             ever_story.addClass("hidden")
             
-            about_btn1.click(function(){
-                ever_story.toggleClass("hidden")
-            })
-            about_btn2.click(function(){
-                cha_guide1.toggleClass("hidden")
-                cha1.toggleClass("hidden")
-                cha_guide2.toggleClass("hidden")
-                cha2.toggleClass("hidden")
-            })
-            
+
+            // 버튼1 관련 내용만 보이기
+            cha_guide1.removeClass("hidden")
+            cha1.removeClass("hidden")
+            cha_guide2.removeClass("hidden")
+            cha2.removeClass("hidden")
         })
-    </script>
+
+        about_btn2.click(function(){
+            // 다른 내용 다 숨기기
+            cha_guide1.addClass("hidden")
+            cha1.addClass("hidden")
+            cha_guide2.addClass("hidden")
+            cha2.addClass("hidden")
+
+            // 버튼2 관련 내용만 보이기
+            ever_story.removeClass("hidden")
+        })
+    })
+</script>
     <script>
         $(function(){
             var modal = $("#videoModal")
